@@ -15,6 +15,7 @@
         onmouseout="handleMouseUp(event)" onmousemove="handleMouseMove(event)">
     </canvas>
     <canvas id="guideCanvas"></canvas>
+    <canvas id="pointerCanvas"></canvas>
     <div class="control">
         <div>
             <button title="Delete the current drawing" onclick="reset()">
@@ -33,9 +34,15 @@
             </label>
         </div>
         <div>
+            <label title="Line thickness">
+                Thickness
+                <input type='number' min="0.5" max="10" step="0.5" value="1" oninput="thicknessInputChange(event)">
+            </label>
+        </div>
+        <div>
             <label title="Color: enter a valid HTML color string">
                 Color
-                <input type='text' oninput="colorInputChange(event)">
+                <input type='text' value="white" oninput="colorInputChange(event)">
             </label>
             <div id="colorPreview">
             </div>
@@ -55,8 +62,11 @@
             Change the number of axes for different patterns, for example draw something with 6 then with 12!
         </p>
         <p>
-            Set a color using HTML color names or codes, see <a href="https://html-color-codes.info/"
-                target="blank">here</a>.
+            Set the line thickness in pixels with the 'thickness' parameter.
+        </p>
+        <p>
+            Set a color using HTML color names (red, steelblue, ...) or codes (#888, rgba(), hsl()). See <a
+                href="https://html-color-codes.info/" target="blank">here</a>.
         </p>
         <p>
             <button onclick="hideInfo()">

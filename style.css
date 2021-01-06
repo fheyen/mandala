@@ -16,7 +16,8 @@ canvas {
     left: 0;
 }
 
-#guideCanvas {
+#guideCanvas,
+#pointerCanvas {
     pointer-events: none;
 }
 
@@ -95,10 +96,12 @@ select span {
 }
 
 #colorPreview {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     display: inline-block;
     border-radius: 6px;
+    border: 1px solid #888;
+    background-color: white;
 }
 
 .gitHubLink {
