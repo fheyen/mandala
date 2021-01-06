@@ -225,8 +225,8 @@ function colorInputChange(e) {
 function handleMouseDown(e) {
     IS_DRAWING = true;
     if (e.touches) {
-        LAST_X = e.touches[0].offsetX;
-        LAST_Y = e.touches[0].offsetY;
+        LAST_X = e.touches[0].clientX;
+        LAST_Y = e.touches[0].clientY;
     } else {
         LAST_X = e.offsetX;
         LAST_Y = e.offsetY;
@@ -248,8 +248,8 @@ function handleMouseUp(e) {
 function handleMouseMove(e) {
     let x, y;
     if (e.touches) {
-        x = e.touches[0].offsetX;
-        y = e.touches[0].offsetY;
+        x = e.touches[0].clientX;
+        y = e.touches[0].clientY;
     } else {
         x = e.offsetX;
         y = e.offsetY;
