@@ -11,8 +11,9 @@
 </head>
 
 <body onload="draw()" onresize="resize()">
-    <canvas id="canvas" onmousedown="handleMouseDown(event)" onmouseup="handleMouseUp(event)"
-        onmouseout="handleMouseUp(event)" onmousemove="handleMouseMove(event)">
+    <canvas id="canvas" onmousedown="handleMouseDown(event)" touchstart="handleMouseDown(event)"
+        onmouseup="handleMouseUp(event)" touchend="handleMouseUp(event)" onmouseout="handleMouseUp(event)"
+        onmousemove="handleMouseMove(event)" touchmove="handleMouseMove(event)">
     </canvas>
     <canvas id="guideCanvas"></canvas>
     <canvas id="pointerCanvas"></canvas>

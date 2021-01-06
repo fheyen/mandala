@@ -224,8 +224,13 @@ function colorInputChange(e) {
  */
 function handleMouseDown(e) {
     IS_DRAWING = true;
-    LAST_X = e.offsetX;
-    LAST_Y = e.offsetY;
+    if (e.touches) {
+        LAST_X = e.touches[0].offsetX;
+        LAST_Y = e.touches[0].offsetY;
+    } else {
+        LAST_X = e.offsetX;
+        LAST_Y = e.offsetY;
+    }
     handleMouseMove(e);
 }
 
@@ -241,10 +246,16 @@ function handleMouseUp(e) {
  * Mouse move
  */
 function handleMouseMove(e) {
+    let x, y;
+    if (e.touches) {
+        x = e.touches[0].offsetX;
+        y = e.touches[0].offsetY;
+    } else {
+        x = e.offsetX;
+        y = e.offsetY;
+    }
     const w = window.innerWidth;
     const h = window.innerHeight;
-    const x = e.offsetX;
-    const y = e.offsetY;
     if (IS_DRAWING) {
         // Draw
         const canvas = document.getElementById('canvas');
@@ -258,5 +269,4 @@ function handleMouseMove(e) {
     const pointerCtx = pointerCanvas.getContext('2d');
     pointerCtx.clearRect(0, 0, w, h);
     drawWithSymmetry(pointerCtx, x, y, x, y, w / 2, h / 2);
-
 }
