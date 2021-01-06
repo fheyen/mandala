@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #eee;
+}
+
+body {
+    background-color: #888;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#guideCanvas {
+    pointer-events: none;
+}
+
+.control {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+}
+
+.control>div {
+    margin: 5px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .control {
+        grid-template-columns: auto;
+    }
+}
+
+#info {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#info p {
+    padding: 8px 15px;
+}
+
+#info code {
+    padding: 0 4px 3px 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #666;
+    border-radius: 5px;
+}
+
+#info a {
+    color: rgb(92, 163, 221);
+    pointer-events: all;
+    text-decoration: none;
+}
+
+label {
+    display: inline-block;
+}
+
+button,
+button:focus,
+input,
+input:focus,
+select,
+select:focus {
+    margin-right: 20px;
+    padding: 4px 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #666;
+    border-radius: 5px;
+    pointer-events: all;
+}
+
+button,
+select {
+    cursor: pointer;
+}
+
+select span {
+    width: 20px;
+    height: 10px;
+}
+
+#colorPreview {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    border-radius: 6px;
+}
+
+.gitHubLink {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.gitHubLink a {
+    color: #eee;
+    text-decoration: none;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandala</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body onload="draw()" onresize="resize()">
+    <canvas id="canvas" onmousedown="handleMouseDown(event)" onmouseup="handleMouseUp(event)"
+        onmouseout="handleMouseUp(event)" onmousemove="handleMouseMove(event)">
+    </canvas>
+    <canvas id="guideCanvas"></canvas>
+    <div class="control">
+        <div>
+            <button title="Delete the current drawing" onclick="reset()">
+                Clear
+            </button>
+        </div>
+        <div>
+            <button title="Toggle guide lines" onclick="toggleGuides()">
+                Guides
+            </button>
+        </div>
+        <div>
+            <label title="Number of mirror axes">
+                Axes
+                <input type='number' min="2" max="100" step="1" value="6" oninput="axesInputChange(event)">
+            </label>
+        </div>
+        <div>
+            <label title="Color: enter a valid HTML color string">
+                Color
+                <input type='text' oninput="colorInputChange(event)">
+            </label>
+            <div id="colorPreview">
+            </div>
+        </div>
+    </div>
+    <div id="info">
+        <p>
+            Everything you draw will be mirrored and rotated along the axes.
+        </p>
+        <p>
+            You can save your drawing by right-cliking on it and selecting 'save image as' or similar.
+        </p>
+        <p>
+            Click on the <code>Guides</code> button on the top to show or hide the guide lines.
+        </p>
+        <p>
+            Change the number of axes for different patterns, for example draw something with 6 then with 12!
+        </p>
+        <p>
+            Set a color using HTML color names or codes, see <a href="https://html-color-codes.info/"
+                target="blank">here</a>.
+        </p>
+        <p>
+            <button onclick="hideInfo()">
+                Got it!
+            </button>
+        </p>
+    </div>
+    <div class="gitHubLink">
+        <a href="https://github.com/fheyen/mandala">❴ ❵ code on GitHub</a>
+    </div>
+</body>
+
+</html>
