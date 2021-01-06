@@ -103,9 +103,10 @@ function drawGuides() {
     const h = window.innerHeight;
     const cx = w / 2;
     const cy = h / 2;
-    const positions = getRotatedPositions(w, cy, cx, cy, N_AXES);
+    const positions = getRotatedPositions(Math.min(w, h), cy, cx, cy, N_AXES);
     ctx.clearRect(0, 0, w, h);
     ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
+    ctx.setLineDash([5, 5]);
     ctx.lineWidth = 1;
     for (let { x, y } of positions) {
         ctx.beginPath();
